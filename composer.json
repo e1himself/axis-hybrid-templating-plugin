@@ -1,6 +1,6 @@
 {
   "name": "axis/axis-hybrid-templating-plugin",
-  "description": "symfony 1.x plugin that integrates enables to use multiple templating engines with symfony.",
+  "description": "symfony 1.x plugin that enables to use multiple templating engines with symfony.",
 
   "type": "symfony1-plugin",
   "extra": {
