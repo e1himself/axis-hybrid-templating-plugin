@@ -57,6 +57,10 @@ or
 This configuration leads to unambiguous template loader order controlled by you.
 By default templating engines are checked in order they were defined in `factories.yml` file.
 
+---------------------------------------
+*Note*: This way of `factories.yml` configuration is supported by 
+[AxisServiceContainerPlugin](https://github.com/e1himself/axis-service-container-plugin)
+
 
 ### Twig
 
@@ -78,9 +82,6 @@ all:
       twig: context://twig
     tag: hybrid_templating.engine
 ```
------
-*Note*: This way of configuration is supported by 
-[AxisServiceContainerPlugin](https://github.com/e1himself/axis-service-container-plugin)
 
 
 Usage examples
