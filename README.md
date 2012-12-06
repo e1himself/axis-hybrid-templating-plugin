@@ -107,4 +107,6 @@ apps/
       - layout.twig
 ```
 
-As you have notices your controller view is using PHP templating while layout and partial are 
+As you have notices your controller view is using PHP templating while layout and partial are Twig templates. 
+This will work tranparently switching between templating engines contexts passing specified variables between 
+templates.
