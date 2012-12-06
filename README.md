@@ -11,7 +11,8 @@ Installation
 ------------
 
 Use [Composer](http://getcomposer.org/). Just add this dependency to your `composer.json`:
-```
+
+```json
   "require": {
     "axis/axis-hybrid-templating-plugin": "dev-master"
   }
@@ -22,7 +23,7 @@ Configuration
 
 To enable Hybrid Templating in your project you should configure symfony to use Hybrid views 
 for layouts and partials using `module.yml` config file:
-```
+```yml
 all:
   view_class: \Axis\S1\HybridTemplating\View\Hybrid   # meens HybridView class
   partial_view_class: \Axis\S1\HybridTemplating\View\Hybrid   # means HybridPartialView class
@@ -40,13 +41,13 @@ controller view available in your project. So there is a questin what will be lo
 To control the templating engines priority you can use `priority` option of Hybrid Templating Loader
 in your project's `factories.yml` file.
 
-```
+```yml
   hybrid_templating.loader:
     parameters:
       priority: [twig, php] # these are extensions of supported templating engines in order of priority
 ```
 or
-```
+```yml
   hybrid_templating.loader:
     parameters:
       priority:
@@ -67,14 +68,14 @@ By default templating engines are checked in order they were defined in `factori
 To use [Twig](http://twig.sensiolabs.org/) templating engine you should include 
 `axis/axis-twig-plugin` into your project. Just add dependency to it in your `composer.json`:
 
-```
+```json
   "require": {
     "axis/axis-twig-plugin": "dev-master"
   }
 ```
 
 Next you should configure Twig engine for Hybrid Templating. Add this to your project's `factories.yml`:
-```
+```yml
 all:
   hybrid_templating.engine.twig:
     class: \Axis\S1\HybridTemplating\Engine\TwigTemplatingEngine
