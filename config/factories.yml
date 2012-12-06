@@ -1,0 +1,22 @@
+all:
+  hybrid_templating.loader:
+    class: \Axis\S1\HybridTemplating\Loader\BasicFilesystemLoader
+    parameters:
+      application_configuration: context://configuration
+      engines: tag://hybrid_templating.engine
+#      priority: [twig, php]
+
+  hybrid_templating.engine:
+    class: \Axis\S1\HybridTemplating\Engine\HybridTemplatingEngine
+    parameters:
+      engines: tag://hybrid_templating.engine
+
+  hybrid_templating.engine.php:
+    class: \Axis\S1\HybridTemplating\Engine\PhpTemplatingEngine
+    tag: hybrid_templating.engine
+
+#  hybrid_templating.engine.twig:
+#    class: \Axis\S1\HybridTemplating\Engine\TwigTemplatingEngine
+#    parameters:
+#      twig: context://twig
+#    tag: hybrid_templating.engine

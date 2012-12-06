@@ -1,2 +1,2 @@
-axis-hybrid-templating-plugin
-=============================
+AxisHybridTemplatingPlugin
+==========================

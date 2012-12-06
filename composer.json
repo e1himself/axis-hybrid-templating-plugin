@@ -1,0 +1,38 @@
+{
+  "name": "axis/axis-hybrid-templating-plugin",
+  "description": "symfony 1.x plugin that integrates enables to use multiple templating engines with symfony.",
+
+  "type": "symfony1-plugin",
+  "extra": {
+    "installer-name": "AxisHybridTemplatingPlugin"
+  },
+
+  "keywords": ["symfony", "templating"],
+  "license": "MIT",
+  "homepage": "https://github.com/e1himself/axis-hybrid-templating-plugin",
+
+  "authors": [
+    {
+      "name": "Ivan Voskoboynyk",
+      "email": "ioann.voskoboynyk@gmail.com",
+      "homepage": "https://github.com/e1himself"
+    }
+  ],
+
+  "autoload": {
+    "psr-0": {
+      "Axis\\S1\\HybridTemplating": "lib/"
+    }
+  },
+
+  "require": {
+    "php": ">=5.3.0",
+    "composer/installers": "*",
+    "symfony/class-loader": "2.2.x-dev",
+    "axis/axis-service-container-plugin": "dev-master"
+  },
+
+  "suggest": {
+    "axis/axis-twig-plugin": "Allow to use Twig templates"
+  }
+}
