@@ -15,6 +15,7 @@ all:
     class: \Axis\S1\HybridTemplating\Engine\PhpTemplatingEngine
     tag: hybrid_templating.engine
 
+#  # Enable this service in your project's factories.yml to use Twig templates
 #  hybrid_templating.engine.twig:
 #    class: \Axis\S1\HybridTemplating\Engine\TwigTemplatingEngine
 #    parameters:
