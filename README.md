@@ -25,7 +25,7 @@ To enable Hybrid Templating in your project you should configure symfony to use 
 for layouts and partials using `module.yml` config file:
 ```yml
 all:
-  view_class: \Axis\S1\HybridTemplating\View\Hybrid   # meens HybridView class
+  view_class: \Axis\S1\HybridTemplating\View\Hybrid   # means HybridView class
   partial_view_class: \Axis\S1\HybridTemplating\View\Hybrid   # means HybridPartialView class
 ```
 
