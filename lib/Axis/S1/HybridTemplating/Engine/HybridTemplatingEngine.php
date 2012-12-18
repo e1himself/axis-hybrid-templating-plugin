@@ -21,14 +21,24 @@ class HybridTemplatingEngine extends BaseTemplatingEngine
   protected $engines = array();
 
   /**
+   * @var \sfEventDispatcher
+   */
+  protected $dispatcher;
+
+  /**
    * @param array|TemplatingEngine[] $engines
    */
-  public function __construct($engines = array())
+  public function __construct($engines = array(), $dispatcher)
   {
     foreach ($engines as $engine)
     {
       $this->engines[$engine->getExtension()] = $engine;
     }
+  }
+
+  public function isEscapingNeeded()
+  {
+    return false;
   }
 
   /**
@@ -49,6 +59,27 @@ class HybridTemplatingEngine extends BaseTemplatingEngine
         $template
       ));
     }
-    return $this->engines[$ext]->render($template, $vars);
+
+    $engine = $this->engines[$ext];
+
+    // escape variables
+    if ($engine->isEscapingNeeded())
+    {
+      $vars = $this->initializeAttributeHolder($vars)->toArray();
+    }
+
+    return $engine->render($template, $vars);
+  }
+
+  /**
+   * @param $vars
+   * @return \sfViewParameterHolder
+   */
+  protected function initializeAttributeHolder($vars)
+  {
+    return new \sfViewParameterHolder($this->dispatcher, $vars, array(
+      'escaping_method'   => \sfConfig::get('sf_escaping_method'),
+      'escaping_strategy' => \sfConfig::get('sf_escaping_strategy'),
+    ));
   }
 }

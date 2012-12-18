@@ -10,6 +10,7 @@ all:
     class: \Axis\S1\HybridTemplating\Engine\HybridTemplatingEngine
     parameters:
       engines: tag://hybrid_templating.engine
+      dispatcher: context://dispatcher
 
   hybrid_templating.engine.php:
     class: \Axis\S1\HybridTemplating\Engine\PhpTemplatingEngine
