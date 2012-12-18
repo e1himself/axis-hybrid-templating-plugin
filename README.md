@@ -110,5 +110,5 @@ apps/
 ```
 
 As you have noticed your controller view is using PHP templating while layout and partial are Twig templates. 
-This will work tranparently switching between templating engines contexts passing specified variables between 
+This will work transparently switching between templating engines contexts passing specified variables between
 templates.
