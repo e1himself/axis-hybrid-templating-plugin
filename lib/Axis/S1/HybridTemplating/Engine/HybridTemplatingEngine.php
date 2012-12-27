@@ -34,6 +34,7 @@ class HybridTemplatingEngine extends BaseTemplatingEngine
     {
       $this->engines[$engine->getExtension()] = $engine;
     }
+    $this->dispatcher = $dispatcher;
   }
 
   public function isEscapingNeeded()
